@@ -30,52 +30,40 @@ export const useCategories = () => {
         queryKey: ['categories'],
         queryFn: fetchCategories,
     });
+    console.log(data);
 
     const createCategory = useMutation({
         mutationFn: async (categoryData) => {
             const response = await api.post('/create', {
                 ...categoryData,
-                userId, // Add userId to the request
+                userId,
             });
             return response.data;
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['categories'] });
-            queryClient.invalidateQueries({ queryKey: ['userCategories', userId] });
         },
     });
 
     const updateCategory = useMutation({
         mutationFn: async ({ id, categoryData }) => {
-            // First check if the category belongs to the user
-            const category = data?.find(cat => cat._id === id);
-            if (!category || category.userId !== userId) {
-                throw new Error('You are not authorized to update this category');
-            }
             const response = await api.put(`/${id}`, {
                 ...categoryData,
-                userId, // Add userId to the request
+                userId,
             });
             return response.data;
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['categories'] });
-            queryClient.invalidateQueries({ queryKey: ['userCategories', userId] });
         },
     });
 
     const deleteCategory = useMutation({
         mutationFn: async (id) => {
-            // First check if the category belongs to the user
-            const category = data?.find(cat => cat._id === id);
-            if (!category || category.userId !== userId) {
-                throw new Error('You are not authorized to delete this category');
-            }
             await api.delete(`/${id}`);
         },
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['categories'] });
-            queryClient.invalidateQueries({ queryKey: ['userCategories', userId] });
         },
     });
 

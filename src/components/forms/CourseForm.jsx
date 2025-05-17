@@ -83,6 +83,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                     formData.append(key, data[key]);
                 }
             });
+            // Append userId to FormData
+            formData.append('userId', localStorage.getItem('userId'));
 
             if (mode === 'create') {
                 await createCourse.mutateAsync(formData);

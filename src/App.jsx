@@ -10,8 +10,6 @@ import { Categories } from './pages/Categories'
 import { CourseDetail } from './pages/CourseDetail'
 import { CourseFormPage } from './pages/CourseFormPage'
 import { CategoryFormPage } from './pages/CategoryFormPage'
-import { MyCourses } from './pages/MyCourses'
-import { MyCategories } from './pages/MyCategories'
 
 // Loading component
 const LoadingSpinner = () => (
@@ -96,8 +94,7 @@ function App() {
                   <Route path="/categories" element={<Categories />} />
                   <Route path="/categories/new" element={<CategoryFormPage />} />
                   <Route path="/categories/edit/:id" element={<CategoryFormPage />} />
-                  <Route path="/my-courses" element={<MyCourses />} />
-                  <Route path="/my-categories" element={<MyCategories />} />
+
                 </Route>
               </Routes>
             </div>

@@ -11,10 +11,13 @@ export const useCourses = () => {
     return response.data;
   };
 
+
   const { data, isLoading, error } = useQuery({
     queryKey: ['courses'],
     queryFn: fetchCourses,
   });
+
+  console.log(data);
 
   const createCourse = useMutation({
     mutationFn: async (formData) => {
