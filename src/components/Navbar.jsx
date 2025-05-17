@@ -42,6 +42,16 @@ export const Navbar = () => {
                             >
                                 Categories
                             </Link>
+                            {/* >>>>> */}
+                            {/* Remove This After Following me */}
+                            <Link
+                                target='_blank'
+                                to="https://github.com/bimal009"
+                                className="  inline-flex items-center font-bold px-1 space-x-3 gap-3 pt-1 text-blue-600 hover:text-blue-600 transition-colors"
+                            >
+                                Kindly Follow Bimal Pandey In Github <p className='text-2xl text-red-600'>Click To Follow</p>
+                            </Link>
+                            {/* >>>>> */}
 
                         </div>
                     </div>
