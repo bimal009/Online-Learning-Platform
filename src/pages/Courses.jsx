@@ -3,6 +3,7 @@ import { Link, useSearchParams } from 'react-router-dom';
 import { useCourses } from '../hooks/useCourses';
 import { useCoursesByCategory } from '../hooks/useCoursesByCategory';
 import { useCategories } from '../hooks/useCategories';
+import toast from 'react-hot-toast';
 
 export const Courses = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -31,8 +32,10 @@ export const Courses = () => {
         if (window.confirm('Are you sure you want to delete this course?')) {
             try {
                 await deleteCourse.mutateAsync(courseId);
+                toast.success('Course deleted successfully!');
             } catch (error) {
                 console.error('Error deleting course:', error);
+                toast.error('Failed to delete course.');
             }
         }
     };

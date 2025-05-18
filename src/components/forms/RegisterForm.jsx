@@ -3,6 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 // Validation schema
 const registerSchema = z
@@ -39,10 +40,14 @@ const RegisterForm = () => {
             const response = await registerUser(data);
             if (response.success) {
                 console.log(data);
+                toast.success('Account created successfully!');
                 navigate('/');
+            } else {
+                toast.error(response.message || 'Registration failed.');
             }
         } catch (error) {
             console.error('Registration error:', error);
+            toast.error('An error occurred during registration.');
         }
     };
 

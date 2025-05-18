@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useCategories } from '../../hooks/useCategories';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 // Validation schema
 const categorySchema = z.object({
@@ -31,12 +32,15 @@ export default function CategoryForm({ category, mode = 'create' }) {
         try {
             if (mode === 'create') {
                 await createCategory.mutateAsync(data);
+                toast.success('Category created successfully!');
             } else {
                 await updateCategory.mutateAsync({ id: category._id, categoryData: data });
+                toast.success('Category updated successfully!');
             }
             navigate('/categories');
         } catch (error) {
             console.error('Form submission error:', error);
+            toast.error('Failed to save category.');
         }
     };
 

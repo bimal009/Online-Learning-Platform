@@ -11,6 +11,7 @@ import { Categories } from './pages/Categories'
 import { CourseDetail } from './pages/CourseDetail'
 import { CourseFormPage } from './pages/CourseFormPage'
 import { CategoryFormPage } from './pages/CategoryFormPage'
+import { Toaster } from 'react-hot-toast'
 
 // Loading component
 const LoadingSpinner = () => (
@@ -60,7 +61,7 @@ class ErrorBoundary extends React.Component {
 }
 
 // ProtectedRoute wrapper for nested routes
-const ProtectedRoute = () => {
+const ProtectedRoute = ({ children }) => {
   const { user, loading } = useAuth()
 
   if (loading) {
@@ -71,13 +72,13 @@ const ProtectedRoute = () => {
     return <Navigate to="/login" replace />
   }
 
-  return <Outlet />
+  return children
 }
 
 function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <AuthProvider>
+    <AuthProvider>
+      <QueryClientProvider client={queryClient}>
         <ErrorBoundary>
           <Router>
             <div className="min-h-screen bg-gray-50">
@@ -100,9 +101,10 @@ function App() {
               </Routes>
             </div>
           </Router>
+          <Toaster />
         </ErrorBoundary>
-      </AuthProvider>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </AuthProvider>
   )
 }
 

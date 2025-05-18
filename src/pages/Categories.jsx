@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useCategories } from '../hooks/useCategories';
+import toast from 'react-hot-toast';
 
 export const Categories = () => {
     const { data: categories, isLoading, deleteCategory } = useCategories();
@@ -8,8 +9,10 @@ export const Categories = () => {
         if (window.confirm('Are you sure you want to delete this category?')) {
             try {
                 await deleteCategory.mutateAsync(categoryId);
+                toast.success('Category deleted successfully!');
             } catch (error) {
                 console.error('Error deleting category:', error);
+                toast.error('Failed to delete category.');
             }
         }
     };

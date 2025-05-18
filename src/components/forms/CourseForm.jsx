@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { useCourses } from '../../hooks/useCourses';
 import { useCategories } from '../../hooks/useCategories';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 // Validation schema
 const courseSchema = z.object({
@@ -66,6 +67,9 @@ export default function CourseForm({ course, mode = 'create' }) {
                 setImagePreview(reader.result);
             };
             reader.readAsDataURL(file);
+        } else {
+            setImagePreview('');
+            setValue('image', '');
         }
     };
 
@@ -88,12 +92,15 @@ export default function CourseForm({ course, mode = 'create' }) {
 
             if (mode === 'create') {
                 await createCourse.mutateAsync(formData);
+                toast.success('Course created successfully!');
             } else {
                 await updateCourse.mutateAsync({ id: course._id, courseData: formData });
+                toast.success('Course updated successfully!');
             }
             navigate('/courses');
         } catch (error) {
             console.error('Form submission error:', error);
+            toast.error('Failed to save course.');
         }
     };
 

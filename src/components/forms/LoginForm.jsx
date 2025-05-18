@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 import { useAuth } from '../../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 // Validation schema
 const loginSchema = z.object({
@@ -30,10 +31,14 @@ const LoginForm = () => {
             console.log('Form submitted:', response);
             if (response.success) {
                 console.log('Login successful:', response);
+                toast.success('Login successful!');
                 navigate('/');
+            } else {
+                toast.error(response.message || 'Login failed.');
             }
         } catch (error) {
             console.error('Login error:', error);
+            toast.error('An error occurred during login.');
         }
     };
 
