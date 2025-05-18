@@ -1,6 +1,5 @@
-import Link from 'next/link'
+import { Link } from 'react-router-dom'
 import React from 'react'
-import Image from 'next/image'
 import { Facebook, Twitter, Instagram, Github } from 'lucide-react'
 
 const Footer = () => {
@@ -42,23 +41,23 @@ const Footer = () => {
     ]
 
     return (
-        <footer className="bg-background border-t border-border/40">
+        <footer className="bg-gradient-to-b from-white to-purple-50 border-t border-purple-100">
             <div className="container mx-auto px-4 py-12">
                 {/* Main footer content */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
                     {/* Brand section */}
                     <div className="lg:col-span-2">
-                        <Link href="/" className="flex items-center gap-2 mb-4">
-                            <Image
+                        <Link to="/" className="flex items-center gap-2 mb-4">
+                            <img
                                 src="/logo.svg"
                                 alt="Learnly logo"
                                 width={32}
                                 height={32}
                                 className="h-8 w-8 object-contain"
                             />
-                            <p className="text-xl font-bold">Learnly</p>
+                            <p className="text-xl font-bold text-gray-900">Learnly</p>
                         </Link>
-                        <p className="text-sm text-muted-foreground mb-6 max-w-md">
+                        <p className="text-sm text-gray-600 mb-6 max-w-md">
                             Learnly empowers you to grow your skills and unlock new opportunities.
                             Discover expert-led courses, connect with instructors, and advance your career.
                         </p>
@@ -70,7 +69,7 @@ const Footer = () => {
                                     href={social.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="h-10 w-10 flex items-center justify-center rounded-full bg-muted hover:bg-muted/80 transition-colors"
+                                    className="h-10 w-10 flex items-center justify-center rounded-full bg-purple-100 text-purple-600 hover:bg-purple-200 transition-colors"
                                     aria-label={social.label}
                                 >
                                     {social.icon}
@@ -82,13 +81,13 @@ const Footer = () => {
                     {/* Footer navigation links */}
                     {footerLinks.map((section, index) => (
                         <div key={index}>
-                            <h3 className="font-medium text-base mb-4">{section.title}</h3>
+                            <h3 className="font-medium text-base mb-4 text-gray-900">{section.title}</h3>
                             <ul className="space-y-3">
                                 {section.links.map((link, linkIndex) => (
                                     <li key={linkIndex}>
                                         <Link
-                                            href={link.href}
-                                            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                                            to={link.href}
+                                            className="text-sm text-gray-600 hover:text-purple-600 transition-colors"
                                         >
                                             {link.label}
                                         </Link>
@@ -100,18 +99,18 @@ const Footer = () => {
                 </div>
 
                 {/* Bottom section with copyright */}
-                <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p className="text-sm text-muted-foreground order-2 md:order-1">
+                <div className="pt-8 border-t border-purple-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-sm text-gray-600 order-2 md:order-1">
                         &copy; {currentYear} Learnly. All rights reserved.
                     </p>
                     <div className="flex gap-6 order-1 md:order-2">
-                        <Link href="/terms" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                        <Link to="/terms" className="text-xs text-gray-600 hover:text-purple-600 transition-colors">
                             Terms
                         </Link>
-                        <Link href="/privacy" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                        <Link to="/privacy" className="text-xs text-gray-600 hover:text-purple-600 transition-colors">
                             Privacy
                         </Link>
-                        <Link href="/cookies" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
+                        <Link to="/cookies" className="text-xs text-gray-600 hover:text-purple-600 transition-colors">
                             Cookies
                         </Link>
                     </div>

@@ -17,7 +17,7 @@ const CallToAction = () => {
                     <button className="rounded-full px-6 py-2 bg-primary text-black bg-gray-100 shadow-sm hover:bg-gray-200">
                         <Link to="/courses">Enroll Now</Link>
                     </button>
-                    <button className="rounded-full px-6 py-2 bg-blue-500 shadow-sm hover:bg-blue-600 text-white">
+                    <button className="rounded-full px-6 py-2 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white">
                         <Link to="/courses">Browse Courses</Link>
                     </button>
                 </div>

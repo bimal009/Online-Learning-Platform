@@ -110,14 +110,16 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </h2>
 
                 <div className="space-y-1">
-                    <label htmlFor="title" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="title" className="block text-sm font-medium text-gray-700">
                         Course Title
                     </label>
                     <input
                         {...register('title')}
                         type="text"
                         id="title"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.title ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.title
+                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                                : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.title && (
@@ -126,14 +128,16 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="description" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="description" className="block text-sm font-medium text-gray-700">
                         Description
                     </label>
                     <textarea
                         {...register('description')}
                         id="description"
                         rows="4"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.description ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.description
+                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                                : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.description && (
@@ -142,10 +146,10 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="image" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="image" className="block text-sm font-medium text-gray-700">
                         Course Image
                     </label>
-                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                    <div className="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-lg hover:border-purple-300 transition-all duration-200">
                         <div className="space-y-1 text-center">
                             <svg
                                 className="mx-auto h-12 w-12 text-gray-400"
@@ -164,7 +168,7 @@ export default function CourseForm({ course, mode = 'create' }) {
                             <div className="flex text-sm text-gray-600">
                                 <label
                                     htmlFor="image-upload"
-                                    className="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500"
+                                    className="relative cursor-pointer bg-white rounded-md font-medium text-purple-600 hover:text-purple-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-purple-500"
                                 >
                                     <span>Upload a file</span>
                                     <input
@@ -189,7 +193,7 @@ export default function CourseForm({ course, mode = 'create' }) {
                             <img
                                 src={imagePreview}
                                 alt="Course preview"
-                                className="w-full h-48 object-cover rounded-md"
+                                className="w-full h-48 object-cover rounded-lg"
                                 onError={(e) => {
                                     e.target.src = 'https://via.placeholder.com/400x200?text=Invalid+Image';
                                 }}
@@ -199,13 +203,15 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="category" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="category" className="block text-sm font-medium text-gray-700">
                         Category
                     </label>
                     <select
                         {...register('category')}
                         id="category"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.category ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.category
+                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                                : 'border-gray-300 hover:border-purple-300'
                             }`}
                     >
                         <option value="">Select a category</option>
@@ -226,14 +232,16 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="instructor" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="instructor" className="block text-sm font-medium text-gray-700">
                         Instructor
                     </label>
                     <input
                         {...register('instructor')}
                         type="text"
                         id="instructor"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.instructor ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.instructor
+                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                                : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.instructor && (
@@ -242,7 +250,7 @@ export default function CourseForm({ course, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="duration" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="duration" className="block text-sm font-medium text-gray-700">
                         Duration
                     </label>
                     <input
@@ -250,7 +258,9 @@ export default function CourseForm({ course, mode = 'create' }) {
                         type="text"
                         id="duration"
                         placeholder="e.g., 8 weeks, 40 hours"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.duration ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.duration
+                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                                : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.duration && (
@@ -261,7 +271,7 @@ export default function CourseForm({ course, mode = 'create' }) {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center items-center gap-2 py-3 rounded-md bg-indigo-600 text-white text-lg font-semibold shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed transition"
+                    className="w-full flex justify-center items-center gap-2 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-lg font-semibold shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                 >
                     {isSubmitting ? (
                         <>

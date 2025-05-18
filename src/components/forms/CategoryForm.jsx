@@ -52,14 +52,16 @@ export default function CategoryForm({ category, mode = 'create' }) {
                 </h2>
 
                 <div className="space-y-1">
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                         Category Name
                     </label>
                     <input
                         {...register('title')}
                         type="text"
                         id="title"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.name ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.name
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.title && (
@@ -68,14 +70,16 @@ export default function CategoryForm({ category, mode = 'create' }) {
                 </div>
 
                 <div className="space-y-1">
-                    <label htmlFor="description" className="block text-sm font-semibold text-gray-700">
+                    <label htmlFor="description" className="block text-sm font-medium text-gray-700">
                         Description
                     </label>
                     <textarea
                         {...register('description')}
                         id="description"
                         rows="4"
-                        className={`w-full rounded-md border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition ${errors.description ? 'border-red-500 focus:ring-red-500 focus:border-red-500' : 'border-gray-300'
+                        className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.description
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.description && (
@@ -86,7 +90,7 @@ export default function CategoryForm({ category, mode = 'create' }) {
                 <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full flex justify-center items-center gap-2 py-3 rounded-md bg-indigo-600 text-white text-lg font-semibold shadow-lg hover:bg-indigo-700 focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed transition"
+                    className="w-full flex justify-center items-center gap-2 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-lg font-semibold shadow-lg hover:from-purple-700 hover:to-indigo-700 focus:outline-none focus:ring-4 focus:ring-purple-500 focus:ring-opacity-50 disabled:opacity-60 disabled:cursor-not-allowed transition-all duration-300"
                 >
                     {isSubmitting ? (
                         <>
