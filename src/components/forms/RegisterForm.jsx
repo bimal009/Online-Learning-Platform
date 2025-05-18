@@ -67,8 +67,8 @@ const RegisterForm = () => {
                         id="name"
                         placeholder="John Doe"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.name
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.name && (
@@ -86,8 +86,8 @@ const RegisterForm = () => {
                         id="email"
                         placeholder="you@example.com"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.email
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.email && (
@@ -105,8 +105,8 @@ const RegisterForm = () => {
                         id="password"
                         placeholder="••••••••"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.password
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.password && (
@@ -124,8 +124,8 @@ const RegisterForm = () => {
                         id="confirmPassword"
                         placeholder="••••••••"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.confirmPassword
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.confirmPassword && (

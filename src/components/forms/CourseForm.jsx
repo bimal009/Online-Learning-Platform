@@ -118,8 +118,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                         type="text"
                         id="title"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.title
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.title && (
@@ -136,8 +136,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                         id="description"
                         rows="4"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.description
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.description && (
@@ -210,8 +210,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                         {...register('category')}
                         id="category"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.category
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     >
                         <option value="">Select a category</option>
@@ -240,8 +240,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                         type="text"
                         id="instructor"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.instructor
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.instructor && (
@@ -259,8 +259,8 @@ export default function CourseForm({ course, mode = 'create' }) {
                         id="duration"
                         placeholder="e.g., 8 weeks, 40 hours"
                         className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.duration
-                                ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                                : 'border-gray-300 hover:border-purple-300'
+                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                            : 'border-gray-300 hover:border-purple-300'
                             }`}
                     />
                     {errors.duration && (

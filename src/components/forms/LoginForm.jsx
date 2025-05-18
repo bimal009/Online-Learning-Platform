@@ -56,8 +56,8 @@ const LoginForm = () => {
                     id="email"
                     placeholder="you@example.com"
                     className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.email
-                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                            : 'border-gray-300 hover:border-purple-300'
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                        : 'border-gray-300 hover:border-purple-300'
                         }`}
                     autoComplete="email"
                 />
@@ -81,8 +81,8 @@ const LoginForm = () => {
                     id="password"
                     placeholder="••••••••"
                     className={`w-full rounded-lg border px-4 py-3 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-all duration-200 ${errors.password
-                            ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
-                            : 'border-gray-300 hover:border-purple-300'
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                        : 'border-gray-300 hover:border-purple-300'
                         }`}
                     autoComplete="current-password"
                 />
